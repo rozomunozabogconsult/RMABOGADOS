@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RM ABOGADOS CONSULTORES | Firma de Abogados</title>
+  <meta name="description" content="Portal de orientación legal y consultoría jurídica digital de la firma de abogados RM ABOGADOS CONSULTORES en Colombia.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TOAST NOTIFICACIÓN -->
+  <div id="toast" class="toast">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toast-message">Copiado al portapapeles</span>
+  </div>
+
+  <!-- ENCABEZADO -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo" style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 0;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div class="logo-icon" style="width: 32px; height: 32px; font-size: 0.95rem;">RM</div>
+          <div style="font-weight: 800; font-size: 1.15rem; color: var(--primary-color); line-height: 1;">RM <span style="color: var(--accent-color);">ABOGADOS</span></div>
+        </div>
+        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 600; margin-left: 40px; margin-top: -2px; letter-spacing: 0.5px; text-transform: uppercase;">Consultores</div>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a class="nav-link active" data-target="inicio">Inicio</a></li>
+          <li><a class="nav-link" data-target="triaje">Triaje Virtual</a></li>
+          <li><a class="nav-link" data-target="solicitud">Solicitar Asesoría</a></li>
+          <li><a class="nav-link" data-target="consulta-radicado">Consultar Radicado</a></li>
+          <li><a class="nav-link" data-target="legislacion">Guía Legal</a></li>
+          <li><a class="nav-link" data-target="compartir">Panel Asesor</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema">
+        <span>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-content">
+      <!-- Badge dinámico para asesores personalizados -->
+      <div id="advisor-badge" class="advisor-badge hidden">
+        <span class="pulse-dot">🟢</span> Conectado con: <strong id="advisor-badge-name">Asesor</strong>
+      </div>
+      
+      <h1>RM ABOGADOS CONSULTORES</h1>
+      <p style="font-size: 1.1rem; color: #fbbf24; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; margin-top: -10px;">Rozo Muñoz Abogados Consultores</p>
+      <p>Resuelve tus inquietudes jurídicas en minutos. Realiza un triaje inicial con nuestro asistente virtual y conéctate directamente con un especialista en la legislación colombiana.</p>
+      
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <button onclick="document.querySelector('.nav-link[data-target=\'triaje\']').click()" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          Iniciar Triaje Virtual
+        </button>
+        <button onclick="document.querySelector('.nav-link[data-target=\'solicitud\']').click()" class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.3);">
+          Pedir Asesoría Directa
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN PRINCIPAL CON PESTAÑAS (SPA) -->
+  <main class="container">
+
+    <!-- 1. PESTAÑA: INICIO -->
+    <div id="inicio" class="tab-content section">
+      <div class="section-title">
+        <h2>¿Cómo funciona nuestra Firma de Abogados?</h2>
+        <p>Te acompañamos en la resolución de problemas cotidianos regidos por el derecho colombiano de manera simple y ágil.</p>
+      </div>
+
+      <div class="grid-3 mb-4">
+        <div class="card text-center">
+          <div class="law-icon" style="margin: 0 auto 20px auto;">🤖</div>
+          <h3>1. Triaje Inteligente</h3>
+          <p class="mt-4">Responde breves preguntas sobre tu caso y obtén orientación automática basada en la Constitución y códigos de Colombia.</p>
+        </div>
+        <div class="card text-center">
+          <div class="law-icon" style="margin: 0 auto 20px auto;">📄</div>
+          <h3>2. Consulta Normas</h3>
+          <p class="mt-4">Conoce tus derechos fundamentales como la Acción de Tutela (Art. 86) o el Derecho de Petición (Art. 23) de forma simple.</p>
+        </div>
+        <div class="card text-center">
+          <div class="law-icon" style="margin: 0 auto 20px auto;">💬</div>
+          <h3>3. Asesoría Directa</h3>
+          <p class="mt-4">Si compartes o usas un link personalizado, tus datos se enviarán directamente al WhatsApp del asesor asignado.</p>
+        </div>
+      </div>
+
+      <div class="card mt-4" style="background: linear-gradient(135deg, var(--card-bg) 0%, rgba(217, 119, 6, 0.05) 100%); border-left: 5px solid var(--accent-color);">
+        <h3 class="mb-4">Bienvenido a RM ABOGADOS CONSULTORES</h3>
+        <p>Somos una firma de abogados especializada en brindarte soluciones jurídicas a la medida. Esta plataforma te permite orientar tus inquietudes legales a través de nuestro triaje virtual y radicar formalmente tu caso por correo electrónico o WhatsApp directamente con nuestros especialistas: Carlos Muñoz (Derecho Laboral) y Ximena Rozo (Derecho Administrativo), o con nuestra oficina de atención general.</p>
+        <p class="mt-4"><strong>¿Deseas radicar un caso?</strong> Ve a la sección de <b>Solicitar Asesoría</b>, completa tus datos, adjunta tus pruebas o documentos y envíalos formalmente a nuestras bandejas autorizadas.</p>
+      </div>
+    </div>
+
+    <!-- 2. PESTAÑA: TRIAJE (BOT) -->
+    <div id="triaje" class="tab-content section hidden">
+      <div class="section-title">
+        <h2>Asistente de Triaje: LegisBot</h2>
+        <p>Un sistema interactivo de preguntas y respuestas para encuadrar tu situación bajo la legislación de Colombia.</p>
+      </div>
+
+      <div style="max-width: 700px; margin: 0 auto;">
+        <div class="chat-container">
+          <div class="chat-header">
+            <div class="chat-avatar">⚖️</div>
+            <div class="chat-title">
+              <h3>LegisBot Colombia</h3>
+              <p>Orientador Legal Inteligente</p>
+            </div>
+          </div>
+          <div id="chat-messages" class="chat-messages">
+            <!-- Mensajes dinámicos aquí -->
+          </div>
+          <div id="chat-options" class="chat-options">
+            <!-- Opciones dinámicas aquí -->
+          </div>
+        </div>
+        <p class="text-muted text-center mt-4" style="font-size: 0.85rem;">Nota: LegisBot ofrece orientación preliminar de carácter informativo y educativo. No reemplaza un dictamen formal de un abogado matriculado.</p>
+      </div>
+    </div>
+
+    <!-- 3. PESTAÑA: FORMULARIO -->
+    <div id="solicitud" class="tab-content section hidden">
+      <div class="section-title">
+        <h2>Solicitar Asesoría Personalizada</h2>
+        <p>Completa los datos de tu caso. Al enviar, serás redirigido a WhatsApp para concretar tu cita e iniciar tu defensa.</p>
+      </div>
+
+      <div style="max-width: 600px; margin: 0 auto;">
+        <div class="card">
+          <h3 class="mb-4" style="font-size: 1.25rem; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; text-align: center;">
+            Radicación y Consulta de Casos
+          </h3>
+
+          <!-- Selector de Método de Envío -->
+          <div class="method-selector">
+            <button type="button" class="method-btn active" id="method-email-btn" data-method="email">
+              ✉️ Correo (Principal - Adjunta Archivos)
+            </button>
+            <button type="button" class="method-btn" id="method-whatsapp-btn" data-method="whatsapp">
+              💬 WhatsApp Directo
+            </button>
+          </div>
+          
+          <form id="advisory-form" enctype="multipart/form-data">
+            <div class="form-group">
+              <label style="font-weight: 600;">Selecciona tu Asesor Especialista</label>
+              <div class="advisor-selector-grid" id="advisor-selector-grid">
+                <!-- Se cargan dinámicamente desde JS -->
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="client-name">Nombre Completo</label>
+              <input type="text" id="client-name" name="Nombre del Solicitante" required placeholder="Ej. Juan Pérez">
+            </div>
+
+            <div class="form-group">
+              <label for="client-phone">Número de WhatsApp (Celular)</label>
+              <div class="phone-input-group">
+                <select id="client-phone-prefix" name="Indicativo País" required>
+                  <option value="57" selected>🇨🇴 +57</option>
+                  <option value="1">🇺🇸 +1</option>
+                  <option value="34">🇪🇸 +34</option>
+                  <option value="52">🇲🇽 +52</option>
+                  <option value="54">🇦🇷 +54</option>
+                  <option value="58">🇻🇪 +58</option>
+                  <option value="593">🇪🇨 +593</option>
+                  <option value="51">🇵🇪 +51</option>
+                  <option value="56">🇨🇱 +56</option>
+                  <option value="507">🇵🇦 +507</option>
+                </select>
+                <input type="tel" id="client-phone" name="WhatsApp o Celular" required placeholder="Ej. 3001234567">
+              </div>
+            </div>
+
+            <div class="form-group" id="email-group">
+              <label for="client-email">Correo Electrónico <span style="color: #ef4444;">*</span></label>
+              <input type="email" id="client-email" name="email" required placeholder="Ej. juan.perez@email.com">
+            </div>
+
+            <div class="form-group">
+              <label for="client-area">Área de Consulta</label>
+              <select id="client-area" name="Área Legal de la Consulta" required>
+                <option value="" disabled selected>Selecciona un área...</option>
+                <option value="Laboral">Derecho Laboral (Despido, Liquidación, Contratos)</option>
+                <option value="Administrativo">Derecho Administrativo (Estado, Multas, Silencio Adm.)</option>
+                <option value="Familia">Derecho de Familia (Alimentos, Custodia, Divorcio)</option>
+                <option value="Civil">Derecho Civil / Arriendos (Contratos, Deudas)</option>
+                <option value="Tutela / Peticion">Acción de Tutela o Derecho de Petición</option>
+                <option value="Otro / Consulta general">Otro / Consulta General</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="client-desc">Descripción Breve del Caso</label>
+              <textarea id="client-desc" name="Descripción de los Hechos" rows="5" required placeholder="Describe los hechos principales and lo que solicitas..."></textarea>
+            </div>
+
+            <!-- Grupo de archivos adjuntos (solo para correo) -->
+            <div class="form-group" id="attachment-group">
+              <label for="client-files">Anexar Documentos / Pruebas (Opcional)</label>
+              <input type="file" id="client-files" name="Documentos Soporte / Anexos" multiple style="padding: 8px 12px; border: 1px dashed var(--border-color); background-color: rgba(15,30,54,0.01);">
+              <p class="text-muted" style="font-size: 0.75rem; margin-top: 5px;">Formatos: PDF, Imágenes, Word. Puedes adjuntar varios archivos (máx 10MB).</p>
+            </div>
+
+            <!-- Honeypot anti-spam para robots (oculto para humanos) -->
+            <input type="text" name="_honey" style="display:none">
+
+            <!-- Tarjeta de Advertencia de Costos -->
+            <div class="cost-notice-card">
+              <span class="notice-icon">⚠️</span>
+              <div class="notice-body">
+                <strong>Información sobre Costos de Asesoría</strong>
+                Las consultas y la radicación formal de casos tienen un costo comercial. La tarifa final será cotizada de manera personalizada e interna según la complejidad de su caso antes de iniciar cualquier gestión jurídica.
+              </div>
+            </div>
+
+            <!-- Botón de Envío por Correo (Principal) -->
+            <button type="submit" id="submit-email-btn" class="btn btn-primary" style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              Radicar Caso por Correo Electrónico
+            </button>
+
+            <!-- Botón de Envío por WhatsApp (Oculto por defecto) -->
+            <button type="submit" id="submit-whatsapp-btn" class="btn btn-whatsapp hidden" style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              Enviar Consulta al Asesor por WhatsApp
+            </button>
+          </form>
+
+          <p id="form-helper-text" class="text-muted text-center mt-4" style="font-size: 0.8rem;">
+            Se redactará un correo formal con tus archivos adjuntos dirigido a las bandejas autorizadas de nuestra firma.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. PESTAÑA: GUÍA DE LEGISLACIÓN -->
+    <div id="legislacion" class="tab-content section hidden">
+      <div class="section-title">
+        <h2>Guía Rápida de Legislación Colombiana</h2>
+        <p>Conoce los derechos mínimos y las herramientas más utilizadas por los ciudadanos colombianos según la Constitución y los códigos vigentes.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card law-card">
+          <div class="law-article">Artículo 86 - Constitución 1991</div>
+          <div class="law-icon">🛡️</div>
+          <h3>Acción de Tutela</h3>
+          <p>Mecanismo preferente y sumario aplicable cuando se vulneran tus derechos constitucionales fundamentales (ej. Salud, Vida, Petición, Debido Proceso). No requiere de abogado. El juez debe resolver el caso en un término improrrogable de 10 días hábiles.</p>
+        </div>
+
+        <div class="card law-card">
+          <div class="law-article">Artículo 23 - Constitución 1991</div>
+          <div class="law-icon">✉️</div>
+          <h3>Derecho de Petición</h3>
+          <p>Toda persona tiene derecho a presentar peticiones respetuosas a las autoridades o particulares y a obtener pronta resolución. Regulado por la Ley 1755 de 2015, el término general para responder es de 15 días hábiles. Su incumplimiento da paso a la tutela.</p>
+        </div>
+
+        <div class="card law-card">
+          <div class="law-article">Código Sustantivo del Trabajo</div>
+          <div class="law-icon">💼</div>
+          <h3>Derechos Laborales Mínimos</h3>
+          <p>El estatuto laboral protege al trabajador en Colombia. Garantiza el pago del Salario Mínimo Legal Vigente, prestaciones sociales (prima, cesantías, intereses de cesantías, vacaciones) e indemnizaciones por despido sin justa causa (Art. 64), prevaleciendo la realidad del empleo sobre las formalidades escritas.</p>
+        </div>
+
+        <div class="card law-card">
+          <div class="law-article">Derecho Administrativo y CPACA</div>
+          <div class="law-icon">🏛️</div>
+          <h3>Procedimiento Administrativo</h3>
+          <p>Regula la relación entre ciudadanos y entidades del Estado (Alcaldías, Ministerios, DIAN). Basado en el Código de Procedimiento Administrativo (CPACA), define cómo impugnar multas, solicitar contratos estatales (Ley 80 de 1993) o reclamar ante el silencio administrativo.</p>
+        </div>
+
+        <div class="card law-card">
+          <div class="law-article">Ley 820 de 2003 / Código Civil</div>
+          <div class="law-icon">🏠</div>
+          <h3>Arrendamientos y Vivienda</h3>
+          <p>La Ley de arrendamiento de vivienda urbana establece deberes estrictos para arrendadores y arrendatarios. Regula el incremento anual (máximo el IPC del año anterior), las causales justas para dar por terminado el contrato de forma unilateral y los depósitos prohibidos por la ley colombiana.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. PESTAÑA: CONSULTAR RADICADO -->
+    <div id="consulta-radicado" class="tab-content section hidden">
+      <div class="section-title">
+        <h2>Consultar Estado de Radicado</h2>
+        <p>Ingresa tu número de radicado y tu correo electrónico o teléfono celular para verificar el estado actual de tu caso.</p>
+      </div>
+
+      <div style="max-width: 600px; margin: 0 auto;">
+        <div class="card">
+          <h3 class="mb-4" style="font-size: 1.25rem; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; text-align: center;">
+            Búsqueda de Solicitud
+          </h3>
+          
+          <div class="form-group">
+            <label for="search-radicado-input">Número de Radicado</label>
+            <input type="text" id="search-radicado-input" placeholder="Ej. RM-20260608-8646" style="text-transform: uppercase;">
+          </div>
+
+          <div class="form-group">
+            <label for="search-verify-input">Correo Electrónico o Teléfono registrado</label>
+            <input type="text" id="search-verify-input" placeholder="Ej. juan.perez@email.com o 3143211200">
+          </div>
+
+          <button id="search-radicado-btn" class="btn btn-primary" style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--accent-color);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            Buscar Caso
+          </button>
+        </div>
+
+        <div id="search-result-container" class="hidden">
+          <!-- Cargado dinámicamente -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. PESTAÑA: PANEL DE GENERACIÓN DE LINK -->
+    <div id="compartir" class="tab-content section hidden">
+      <div class="section-title">
+        <h2>Panel del Asesor: Configurar Enlace Compartible</h2>
+        <p>Genera un enlace personalizado para que puedas enviarlo a tus clientes, colegas o publicarlo en redes. Toda persona que use tu enlace se conectará contigo.</p>
+      </div>
+
+      <div style="max-width: 600px; margin: 0 auto;">
+        
+        <!-- PANTALLA DE BLOQUEO / ACCESO RESTRINGIDO -->
+        <div id="advisor-lock-screen" class="lock-screen-container">
+          <div class="card text-center" style="width: 100%;">
+            <div class="lock-icon" style="font-size: 2.5rem; margin-bottom: 20px;">🔒</div>
+            <h3>Acceso Restringido</h3>
+            <p class="mt-4" style="color: var(--text-muted); font-size: 0.9rem;">
+              Esta sección es exclusiva para el equipo administrativo de **RM ABOGADOS CONSULTORES**.
+            </p>
+            <div class="form-group mt-4">
+              <input type="password" id="advisor-passcode" placeholder="Ingresa el código de acceso" style="text-align: center; max-width: 300px; margin: 0 auto;">
+            </div>
+            <button id="unlock-panel-btn" class="btn btn-primary" style="max-width: 300px; margin: 0 auto; width: 100%;">
+              Verificar Identidad
+            </button>
+            <p id="lock-error-msg" class="text-muted mt-4 hidden" style="color: #ef4444; font-size: 0.85rem; font-weight: 600;">
+              Código de acceso incorrecto.
+            </p>
+          </div>
+        </div>
+
+        <!-- FORMULARIO DEL PANEL (OCULTO POR DEFECTO) -->
+        <div id="advisor-panel-form-container" class="hidden">
+          <div class="generator-section">
+            <h3 class="mb-4">Tus Datos de Asesor</h3>
+            <p>Ingresa tus datos de contacto oficiales. Estos parámetros se codificarán en la URL compartible.</p>
+            
+            <form id="link-generator-form">
+              <div class="form-group">
+                <label for="gen-name">Nombre Comercial / Nombre del Abogado</label>
+                <input type="text" id="gen-name" required placeholder="Ej. Dra. María Consuelo Restrepo">
+              </div>
+
+              <div class="form-group">
+                <label for="gen-phone">Número de WhatsApp (Celular)</label>
+                <div class="phone-input-group">
+                  <select id="gen-phone-prefix" required style="width: 100px; flex-shrink: 0; padding: 12px 8px; background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); color: white;">
+                    <option value="57" selected style="color: black;">🇨🇴 +57</option>
+                    <option value="1" style="color: black;">🇺🇸 +1</option>
+                    <option value="34" style="color: black;">🇪🇸 +34</option>
+                    <option value="52" style="color: black;">🇲🇽 +52</option>
+                    <option value="54" style="color: black;">🇦🇷 +54</option>
+                    <option value="58" style="color: black;">🇻🇪 +58</option>
+                    <option value="593" style="color: black;">🇪🇨 +593</option>
+                    <option value="51" style="color: black;">🇵🇪 +51</option>
+                    <option value="56" style="color: black;">🇨🇱 +56</option>
+                    <option value="507" style="color: black;">🇵🇦 +507</option>
+                  </select>
+                  <input type="tel" id="gen-phone" required placeholder="Ej. 3001234567" style="flex: 1;">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="gen-email">Correo Electrónico de Contacto</label>
+                <input type="email" id="gen-email" required placeholder="Ej. maria.restrepo@derechocolombia.com">
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; border: 1px solid var(--accent-color);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                Generar y Copiar Enlace Compartible
+              </button>
+            </form>
+
+            <div id="link-result-box" class="link-result-box hidden">
+              <div>
+                <p style="margin-bottom: 5px; font-weight: bold; font-size: 0.85rem; color: white;">¡Enlace Listo! Comparte esta dirección:</p>
+                <span id="generated-link" class="link-text"></span>
+              </div>
+              <button id="copy-link-btn" class="btn btn-outline" style="padding: 8px 12px; color: white; border-color: rgba(255, 255, 255, 0.3); font-size: 0.85rem;">
+                Copiar
+              </button>
+            </div>
+          </div>
+
+          <div class="card mt-4">
+            <h4>¿Qué ocurre al abrir el enlace generado?</h4>
+            <ul style="padding-left: 20px; margin-top: 10px; font-size: 0.9rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 8px;">
+              <li>El logo y el badge superior dirán: <b>Conectado con Asesor: [Tu Nombre]</b>.</li>
+              <li>Las tarjetas del inicio darán la bienvenida bajo tu marca personal o corporativa.</li>
+              <li>El chat interactivo del triaje, al finalizar, pre-rellenará los datos de los casos directamente en tu sección de solicitudes.</li>
+              <li>El botón de "Enviar Consulta" abrirá un chat directo de WhatsApp hacia tu número con un mensaje detallando el nombre del cliente, su teléfono, el área legal y los hechos de su caso.</li>
+            </ul>
+          </div>
+
+          <!-- Bandeja de Gestión de Radicados -->
+          <div class="card mt-4" id="advisor-dashboard-container" style="border-top: 3px solid var(--accent-color);">
+            <h3 class="mb-4">Bandeja de Radicados (Gestión de Casos)</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+              Aquí se muestran las solicitudes de asesoría recibidas en orden cronológico (más recientes primero). Puedes filtrar y buscar casos específicos o gestionar su estado y observaciones.
+            </p>
+
+            <!-- Panel de Búsqueda y Filtros -->
+            <div class="advisor-filters-panel">
+              <div style="flex: 2; min-width: 220px;">
+                <label for="advisor-search-input" style="font-size: 0.8rem; font-weight: 700; margin-bottom: 5px; display: block;">Buscar Solicitud</label>
+                <input type="text" id="advisor-search-input" placeholder="Buscar por radicado, solicitante, correo, teléfono o palabras clave..." style="padding: 10px 12px; font-size: 0.9rem; width: 100%;">
+              </div>
+              <div style="flex: 1; min-width: 140px;">
+                <label for="advisor-filter-status" style="font-size: 0.8rem; font-weight: 700; margin-bottom: 5px; display: block;">Filtrar por Estado</label>
+                <select id="advisor-filter-status" style="padding: 10px 12px; font-size: 0.9rem; border-radius: 6px; width: 100%;">
+                  <option value="all">Todos los Estados</option>
+                  <option value="Recibido">Recibido</option>
+                  <option value="En Revisión">En Revisión</option>
+                  <option value="En Proceso">En Proceso</option>
+                  <option value="Resuelto">Resuelto</option>
+                  <option value="Cerrado">Cerrado</option>
+                </select>
+              </div>
+              <div style="flex: 1; min-width: 160px;">
+                <label for="advisor-filter-area" style="font-size: 0.8rem; font-weight: 700; margin-bottom: 5px; display: block;">Filtrar por Área</label>
+                <select id="advisor-filter-area" style="padding: 10px 12px; font-size: 0.9rem; border-radius: 6px; width: 100%;">
+                  <option value="all">Todas las Áreas</option>
+                  <option value="Laboral">Derecho Laboral</option>
+                  <option value="Administrativo">Derecho Administrativo</option>
+                  <option value="Familia">Derecho de Familia</option>
+                  <option value="Civil">Derecho Civil</option>
+                  <option value="Tutela / Peticion">Acción de Tutela / Petición</option>
+                  <option value="Otro / Consulta general">Otro / Consulta General</option>
+                </select>
+              </div>
+            </div>
+
+            <div id="advisor-cases-list">
+              <!-- Cargados dinámicamente -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <div class="container">
+      <p>⚖️ <strong>RM ABOGADOS CONSULTORES</strong> — Consultoría Legal y Orientación Jurídica.</p>
+      <p style="font-size: 0.75rem; margin-top: 10px; opacity: 0.7;">
+        Basado en la Constitución Política de Colombia de 1991, el Código Sustantivo del Trabajo, el CPACA, el Código Civil y demás normas vigentes.
+      </p>
+    </div>
+  </footer>
+
+  <!-- POPUP DE SELECCIÓN DE WHATSAPP -->
+  <div id="whatsapp-popup" class="whatsapp-popup hidden">
+    <div class="whatsapp-popup-header">
+      <h4>¿Con quién deseas chatear?</h4>
+      <p>Selecciona un asesor especializado</p>
+    </div>
+    <div class="whatsapp-popup-list" id="whatsapp-popup-list">
+      <!-- Se cargan dinámicamente desde JS -->
+    </div>
+  </div>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <button id="floating-whatsapp-btn" class="floating-whatsapp-btn" aria-label="Chatear por WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" style="display: block;">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.456L0 24zm6.59-4.846c1.6.95 3.488 1.459 5.41 1.461 5.922 0 10.743-4.819 10.746-10.743.002-2.87-1.116-5.568-3.15-7.604C17.57 1.213 14.88 0 12.008 0 6.091 0 1.272 4.819 1.27 10.744c0 1.986.518 3.924 1.503 5.642L1.83 22.047l5.885-1.543c1.57.857 3.332 1.309 5.127 1.312h.005zm10.14-8.08c-.287-.143-1.695-.838-1.956-.933-.261-.095-.452-.143-.642.143-.19.286-.736.933-.902 1.124-.167.19-.333.214-.62.071-.286-.143-1.21-.446-2.305-1.424-.852-.76-1.428-1.7-1.595-1.986-.167-.286-.018-.441.125-.582.129-.127.287-.333.43-.5.143-.167.19-.286.287-.476.095-.19.048-.357-.024-.5-.071-.143-.642-1.548-.88-2.12-.23-.556-.464-.48-.642-.489-.166-.008-.356-.01-.546-.01-.19 0-.5.071-.76.357-.261.286-.998.976-.998 2.38 0 1.405 1.022 2.762 1.165 2.952.143.19 2.012 3.072 4.875 4.31.682.295 1.214.47 1.63.601.685.218 1.31.187 1.803.114.549-.08 1.695-.69 1.936-1.357.24-.667.24-1.238.167-1.357-.072-.119-.262-.19-.548-.333z"/>
+    </svg>
+  </button>
+
+  <!-- MODAL DE ÉXITO (ENVÍO CORREO) -->
+  <div id="success-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <div class="modal-icon">✔️</div>
+      <h3>¡Caso Radicado con Éxito!</h3>
+      <p>Tu solicitud de asesoría ha sido procesada correctamente.</p>
+      <div class="modal-details">
+        <p><strong>Firma de Abogados:</strong> RM ABOGADOS CONSULTORES</p>
+        <p id="modal-anexos-text" style="border-top: 1px solid var(--border-color); padding-top: 8px;"><strong>Archivos adjuntos:</strong> Ninguno</p>
+      </div>
+
+      <!-- Advertencia de SPAM Destacada -->
+      <div class="spam-alert-box mt-4">
+        <div class="spam-alert-header">
+          <span class="spam-alert-icon">⚠️</span>
+          <strong>¡ATENCIÓN! REVISA TU BANDEJA DE SPAM</strong>
+        </div>
+        <p class="spam-alert-body">
+          El correo de confirmación con tu número de radicado y los datos del asesor asignado podría haber llegado a tu carpeta de <b>SPAM o Correo No Deseado</b>. Si no lo ves en tu bandeja de entrada en unos minutos, por favor revísala y márcalo como "No es SPAM".
+        </p>
+      </div>
+
+      <p class="mt-4" style="font-size: 0.85rem; color: var(--text-muted);">Se ha radicado tu caso. Nos pondremos en contacto contigo a través de nuestros canales autorizados en horario laboral.</p>
+      <button id="close-modal-btn" class="btn btn-primary mt-4" style="width: 100%;">Aceptar y Finalizar</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
